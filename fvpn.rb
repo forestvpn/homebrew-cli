@@ -5,20 +5,20 @@
 class Fvpn < Formula
   desc ""
   homepage "https://github.com/forestvpn/cli"
-  version "0.1.0-beta"
+  version "0.1.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/forestvpn/cli/releases/download/v0.1.0-beta/fvpn_0.1.0-beta_darwin_arm64.tar.gz"
-      sha256 "aa36661efb09098fd7e8a711de0aed3787b13acfe11de91752969cee4d3c98e3"
+    if Hardware::CPU.intel?
+      url "https://github.com/forestvpn/cli/releases/download/v0.1.0/fvpn_darwin_amd64.tar.gz"
+      sha256 "975a49413c3a39b9b7dda70e3ebb253f94a5463ae74a6f0e97a0b43a11592f15"
 
       def install
         bin.install "fvpn"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/forestvpn/cli/releases/download/v0.1.0-beta/fvpn_0.1.0-beta_darwin_amd64.tar.gz"
-      sha256 "208c84f54a32515a81355913b51c6e0031d61b30c70be20c0500e71957270f5e"
+    if Hardware::CPU.arm?
+      url "https://github.com/forestvpn/cli/releases/download/v0.1.0/fvpn_darwin_arm64.tar.gz"
+      sha256 "62133bb7a131b4ee94f8ebe18006ca5286d740166335fcb007aac82274b9ae05"
 
       def install
         bin.install "fvpn"
@@ -28,16 +28,16 @@ class Fvpn < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/forestvpn/cli/releases/download/v0.1.0-beta/fvpn_0.1.0-beta_linux_arm64.tar.gz"
-      sha256 "806f02d3b298633ed26106d39f9a4bd2ee564581e49f8b40cbca9c3fb0d75c0c"
+      url "https://github.com/forestvpn/cli/releases/download/v0.1.0/fvpn_linux_arm64.tar.gz"
+      sha256 "45d363e1688451826d3bc8a2539ff1d83084fce59ef04ad7c61c5dab20e65e18"
 
       def install
         bin.install "fvpn"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/forestvpn/cli/releases/download/v0.1.0-beta/fvpn_0.1.0-beta_linux_amd64.tar.gz"
-      sha256 "ef288d2dcf86b0d85a1b043592d2dce25bd858ec27348e69fa518f7005e962c9"
+      url "https://github.com/forestvpn/cli/releases/download/v0.1.0/fvpn_linux_amd64.tar.gz"
+      sha256 "5df94732c2cf63a7362557cad645f2534bb3e6504cc7d5c6d35a5b18dda941b5"
 
       def install
         bin.install "fvpn"
