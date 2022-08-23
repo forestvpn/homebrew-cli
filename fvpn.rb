@@ -5,20 +5,20 @@
 class Fvpn < Formula
   desc "Forest VPN CLI client for macOS, Linux, and Windows"
   homepage "https://github.com/forestvpn/cli"
-  version "0.1.3"
+  version "0.1.4"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/forestvpn/cli/releases/download/v0.1.3/fvpn_darwin_arm64.tar.gz"
-      sha256 "5e37b8c5545a01b8d5e8f1d8aee4c70f38329c61d799a3a0ad4eb418d9fb0a5e"
+      url "https://github.com/forestvpn/cli/releases/download/v0.1.4/fvpn_darwin_arm64.tar.gz"
+      sha256 "deb3e35385440250279ce348b9162f065f2e38a014b8892af34899e99c1c2ef3"
 
       def install
         bin.install "fvpn"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/forestvpn/cli/releases/download/v0.1.3/fvpn_darwin_amd64.tar.gz"
-      sha256 "b5b9e4ab7856463fd321986c282ef87003aa38ce0588139eac8718502753fb74"
+      url "https://github.com/forestvpn/cli/releases/download/v0.1.4/fvpn_darwin_amd64.tar.gz"
+      sha256 "7bcdc5fa2bc1c51d86a369221868788d6dc02e2bb8ece2f4b0639421932d1bea"
 
       def install
         bin.install "fvpn"
@@ -28,16 +28,16 @@ class Fvpn < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/forestvpn/cli/releases/download/v0.1.3/fvpn_linux_arm64.tar.gz"
-      sha256 "4d4fe5a2c693f45bb5b57d6795909e937945c9ba98b358501a5d652e9611d6c6"
+      url "https://github.com/forestvpn/cli/releases/download/v0.1.4/fvpn_linux_arm64.tar.gz"
+      sha256 "c9b5311efa71818f71ea06f4e7e16c465222c4d22127d234f1da486ccb764a1a"
 
       def install
         bin.install "fvpn"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/forestvpn/cli/releases/download/v0.1.3/fvpn_linux_amd64.tar.gz"
-      sha256 "22f4625ffe861401fce3fb2fdb9d142bf6458988e246ae432ad4c26cd4d0d297"
+      url "https://github.com/forestvpn/cli/releases/download/v0.1.4/fvpn_linux_amd64.tar.gz"
+      sha256 "4f846921b070a8d9474efec23abf0c1f3c5a1125bde583c05fad964d9a95a23e"
 
       def install
         bin.install "fvpn"
