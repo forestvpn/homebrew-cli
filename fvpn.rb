@@ -5,20 +5,20 @@
 class Fvpn < Formula
   desc "Forest VPN CLI client for macOS, Linux, and Windows"
   homepage "https://github.com/forestvpn/cli"
-  version "0.1.7"
+  version "0.1.7-post.1"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/forestvpn/cli/releases/download/v0.1.7/fvpn_darwin_arm64.tar.gz"
-      sha256 "d898de70a488624875cb9e74fcbbaa2492c9cd5776587f1c45890bf510e60f8e"
+      url "https://github.com/forestvpn/cli/releases/download/v0.1.7-post.1/fvpn_darwin_arm64.tar.gz"
+      sha256 "006fb7d1e06f77dac3041f7e161776754228c14f6b95b7f032b9c951cd426909"
 
       def install
         bin.install "fvpn"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/forestvpn/cli/releases/download/v0.1.7/fvpn_darwin_amd64.tar.gz"
-      sha256 "a3daa1141e109406fc220ea44d135745601fdb6629e11bf153ed50150f560715"
+      url "https://github.com/forestvpn/cli/releases/download/v0.1.7-post.1/fvpn_darwin_amd64.tar.gz"
+      sha256 "16df67f84aaf62c10080305753a54dae7ed8798755fdf1835e114a4f53cbc5fe"
 
       def install
         bin.install "fvpn"
@@ -28,16 +28,16 @@ class Fvpn < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/forestvpn/cli/releases/download/v0.1.7/fvpn_linux_amd64.tar.gz"
-      sha256 "e6616a5713412e823dbfcb41a4d2e4736762716cd41b95eff7c4f9a63e9a3a54"
+      url "https://github.com/forestvpn/cli/releases/download/v0.1.7-post.1/fvpn_linux_amd64.tar.gz"
+      sha256 "4bf78cb4d9e16c49afa0dcb8830b51fc2378b0e9de4a6746271fe6cdaef305f8"
 
       def install
         bin.install "fvpn"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/forestvpn/cli/releases/download/v0.1.7/fvpn_linux_arm64.tar.gz"
-      sha256 "2ff420d2d8da2715be5d5c760c699d59795c51940f482f84f011602f4968b51e"
+      url "https://github.com/forestvpn/cli/releases/download/v0.1.7-post.1/fvpn_linux_arm64.tar.gz"
+      sha256 "77cdba61d09b3f4c3a9659a6f4c4e2fb8dda7ff2a5129f78dc6a73fee1dc6e44"
 
       def install
         bin.install "fvpn"
