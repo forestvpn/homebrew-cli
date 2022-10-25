@@ -5,20 +5,22 @@
 class Fvpn < Formula
   desc "Forest VPN CLI client for macOS, Linux, and Windows"
   homepage "https://github.com/forestvpn/cli"
-  version "0.1.9-dev.10"
+  version "0.2.0"
+
+  depends_on "wireguard-tools"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/forestvpn/cli/releases/download/v0.1.9-dev.10/fvpn_darwin_arm64.tar.gz"
-      sha256 "0e3ea0e48acd8ec569c0dd2cfb0599e6e1f0201d3724588fcda0351430cae463"
+      url "https://github.com/forestvpn/cli/releases/download/v0.2.0/fvpn_darwin_arm64.tar.gz"
+      sha256 "c73d7bc619677abbdcb0c87eaeb33a2b99ae4b170bd9e1a205c7e5ae6bea2e17"
 
       def install
         bin.install "fvpn"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/forestvpn/cli/releases/download/v0.1.9-dev.10/fvpn_darwin_amd64.tar.gz"
-      sha256 "30747907deebb870ddb4adfae6ab6949a11dadd8749550ec086d1e8a317330f7"
+      url "https://github.com/forestvpn/cli/releases/download/v0.2.0/fvpn_darwin_amd64.tar.gz"
+      sha256 "afc028414f9775b1c75f839f188b56fd0b407fdd002d3ff4f53c4bd9385f017b"
 
       def install
         bin.install "fvpn"
@@ -28,24 +30,22 @@ class Fvpn < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/forestvpn/cli/releases/download/v0.1.9-dev.10/fvpn_linux_arm64.tar.gz"
-      sha256 "c579a57ba75040a41f4202aceca4695ab6427b1a713d09662291606503032b72"
+      url "https://github.com/forestvpn/cli/releases/download/v0.2.0/fvpn_linux_arm64.tar.gz"
+      sha256 "d46362cb91895c89177cafced5d74a5e63dc49c461bff8fa2d5dde27059d3960"
 
       def install
         bin.install "fvpn"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/forestvpn/cli/releases/download/v0.1.9-dev.10/fvpn_linux_amd64.tar.gz"
-      sha256 "5871fe0a38c4ab2e1c2b8b85dc8e4d7d7e185c64aec002da58d26882fbe1ca53"
+      url "https://github.com/forestvpn/cli/releases/download/v0.2.0/fvpn_linux_amd64.tar.gz"
+      sha256 "e5271ddb89fb28912dbe9dba012fa22ad7101aa22839dcfebd1e547e5e804bd9"
 
       def install
         bin.install "fvpn"
       end
     end
   end
-
-  depends_on "wireguard-tools"
 
   test do
     system "#{bin}/fvpn version"
