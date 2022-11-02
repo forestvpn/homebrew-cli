@@ -5,22 +5,22 @@
 class Fvpn < Formula
   desc "Forest VPN CLI client for macOS, Linux, and Windows"
   homepage "https://github.com/forestvpn/cli"
-  version "0.2.1-post.1"
+  version "0.2.2"
 
   depends_on "wireguard-tools"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/forestvpn/cli/releases/download/v0.2.1-post.1/fvpn_darwin_amd64.tar.gz"
-      sha256 "5c8b0111876c08ae255a70c5febaaa8f17e2e1bf5c3448d06a3af760a52fe2c6"
+    if Hardware::CPU.arm?
+      url "https://github.com/forestvpn/cli/releases/download/v0.2.2/fvpn_darwin_arm64.tar.gz"
+      sha256 "6fcc015b4c112fa7fd8c31708f157ec249160508a2ab97954425d469e1d0ae16"
 
       def install
         bin.install "fvpn"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/forestvpn/cli/releases/download/v0.2.1-post.1/fvpn_darwin_arm64.tar.gz"
-      sha256 "d90352249433f0054ac28f7dd282134db283537ad1f0a93bdd08bec20b159bfb"
+    if Hardware::CPU.intel?
+      url "https://github.com/forestvpn/cli/releases/download/v0.2.2/fvpn_darwin_amd64.tar.gz"
+      sha256 "7a59c400c08ef73b0cb519bb7e0843dc8c66e14555d9f3860e6c73eca21e16f8"
 
       def install
         bin.install "fvpn"
@@ -30,16 +30,16 @@ class Fvpn < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/forestvpn/cli/releases/download/v0.2.1-post.1/fvpn_linux_arm64.tar.gz"
-      sha256 "2095ed9924a193f474dd0812468dd5fb1433fe44a7b4770549c674dfb8871d81"
+      url "https://github.com/forestvpn/cli/releases/download/v0.2.2/fvpn_linux_arm64.tar.gz"
+      sha256 "d12419073da2c94c9b910099f5931353819ab16ca6899cea40865c4b407a88c1"
 
       def install
         bin.install "fvpn"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/forestvpn/cli/releases/download/v0.2.1-post.1/fvpn_linux_amd64.tar.gz"
-      sha256 "33ba08eeb35fccbdfa490187f4f701342338957d1df524b08e38d0e7fa86d8e7"
+      url "https://github.com/forestvpn/cli/releases/download/v0.2.2/fvpn_linux_amd64.tar.gz"
+      sha256 "714d048b2d776d1be240cfd7461a7c87acfd7c5d4ab8d8c7ac26e8a850a17f0a"
 
       def install
         bin.install "fvpn"
@@ -48,6 +48,6 @@ class Fvpn < Formula
   end
 
   test do
-    system "#{bin}/fvpn version"
+    system "#{bin}/fvpn --version"
   end
 end
