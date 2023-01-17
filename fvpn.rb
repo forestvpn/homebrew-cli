@@ -12,7 +12,7 @@ class Fvpn < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/forestvpn/cli/releases/download/v0.2.6/fvpn_darwin_arm64.tar.gz"
-      sha256 "665702a468f8e7d43211cb7a9ac008311e7faca88beee4d27bc7428c7ee9d6d1"
+      sha256 "fd483dd18bc065e518f92a44b7f9318cd8fa20a60d15eef4ad1ab6dc558133c5"
 
       def install
         bin.install "fvpn"
@@ -23,7 +23,7 @@ class Fvpn < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/forestvpn/cli/releases/download/v0.2.6/fvpn_linux_arm64.tar.gz"
-      sha256 "b492919a5e0f590603d54cf06336df9453215f454c1583b99c795cc14efe8701"
+      sha256 "7c1b4f48f4852cbd6e11f90f415f25b8e44aa6cde20ea6889303dad5ae392fda"
 
       def install
         bin.install "fvpn"
@@ -31,7 +31,7 @@ class Fvpn < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/forestvpn/cli/releases/download/v0.2.6/fvpn_linux_amd64.tar.gz"
-      sha256 "a237598baf1733544f28e604accaf8b5d1122abdace54e001a0ff3179b6b9f85"
+      sha256 "ba37e3edf27d918e7a252bb4d0bcaf714735c76a092d8ae7b6965cf20f4de840"
 
       def install
         bin.install "fvpn"
@@ -39,7 +39,7 @@ class Fvpn < Formula
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
       url "https://github.com/forestvpn/cli/releases/download/v0.2.6/fvpn_linux_arm.tar.gz"
-      sha256 "14df48d0dd234a141c3beef4c0690d83fa58832ec2401880b0347a645822a0b1"
+      sha256 "74ee879f4f0b854009266c7d17db2ef8c318ef48482f49c4ef11e25143fb4aeb"
 
       def install
         bin.install "fvpn"
